@@ -72,6 +72,9 @@ build() {
 [ ! -d $CACHE_DIR ] && mkdir $CACHE_DIR
 
 fetch_meteor
+# exporting path to installed meteor npm binary
+export PATH=~/.meteor/tools/latest/bin:$PATH
+
 build
 
 if [ -f $BUILD_DIR/bin/post_compile ] ; then
